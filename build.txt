@@ -1,0 +1,3 @@
+displayName = Auto Team Join
+author = Dzejk
+version = 0.2.1

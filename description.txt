@@ -1,0 +1,3 @@
+Auto Team Join lets you automatically join a party of your choice.
+
+You can change your party in Mod Configuration menu.
