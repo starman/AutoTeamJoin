@@ -1,4 +1,7 @@
 bin
 obj
 /AutoTeamJoin.sln
+.vs/
 .vs/AutoTeamJoin
+Backup*/
+UpgradeLog*.htm

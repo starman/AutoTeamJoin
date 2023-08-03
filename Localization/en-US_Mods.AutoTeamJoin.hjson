@@ -1,0 +1,10 @@
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		TeamName: {
+			Label: Your current team
+			Tooltip: Use the slider to pick your team
+		}
+	}
+}
