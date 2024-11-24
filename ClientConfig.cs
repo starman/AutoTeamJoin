@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
+using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader.Config;
+using Terraria.ModLoader;
 
 namespace AutoTeamJoin
 {
@@ -9,11 +12,10 @@ namespace AutoTeamJoin
 
 		[Label("Your current team")]
 		[Tooltip("Use the slider to pick your team")]
-		[OptionStrings(new string[] {"No Team", "Red", "Green", "Blue", "Yellow", "Pink"})]
+		[OptionStrings(new string[] { "No Team", "Red", "Green", "Blue", "Yellow", "Pink" })]
 		[DrawTicks]
 		[SliderColor(0, 0, 0)]
-		[DefaultValue("Red")]
+		[DefaultValue("No Team")]
 		public string TeamName;
-
 	}
 }
