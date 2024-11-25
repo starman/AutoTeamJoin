@@ -33,7 +33,7 @@ namespace AutoTeamJoin
             base.OnEnterWorld();
 
             
-            lastTeam = Player.team;
+            lastTeam = Main.player[Main.myPlayer].team;
         }
 
         public override void PreUpdate()
@@ -53,11 +53,11 @@ namespace AutoTeamJoin
             ClientConfig config = GetInstance<ClientConfig>();
             int configTeam = GetKeyFromValue(teamNames, config.TeamName);
 
-            if (Player.team != lastTeam)
+            if (Main.player[Main.myPlayer].team != lastTeam)
             {
-                lastTeam = Player.team;
+                lastTeam = Main.player[Main.myPlayer].team;
 
-                if (teamNames.TryGetValue(Player.team, out string newTeamName))
+                if (teamNames.TryGetValue(Main.player[Main.myPlayer].team, out string newTeamName))
                 {
                     config.TeamName = newTeamName;
                     AutoTeamJoin.SaveConfig(config);
@@ -66,12 +66,12 @@ namespace AutoTeamJoin
                 return;
             }
 
-            if (Player.team == configTeam)
+            if (Main.player[Main.myPlayer].team == configTeam)
                 return;
 
-            Player.team = configTeam;
+            Main.player[Main.myPlayer].team = configTeam;
             lastTeam = configTeam;
-            NetMessage.SendData(MessageID.PlayerTeam, -1, -1, null, Player.whoAmI);
+            NetMessage.SendData(MessageID.PlayerTeam, -1, -1, null, Main.myPlayer);
         }
 
         private int GetKeyFromValue(IDictionary<int, string> dictionary, string value)
